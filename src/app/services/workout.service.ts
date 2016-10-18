@@ -6,6 +6,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class WorkoutService{
   //private searchUrl: string;
+  private isOnWork = true;
   constructor(private _http:Http){
     this.apiKey = '8RUMqLurVTX4OrwCi_BHwLPpTCZT-lhd';
     this.workoutsUrl = 'https://api.mlab.com/api/1/databases/myworkoutsappb/collections/workouts';
@@ -21,5 +22,6 @@ export class WorkoutService{
   getWorkouts(){
     return this._http.get(this.workoutsUrl+"?apiKey="+this.apiKey)
       .map(res=>res.json());
+
   }
 }

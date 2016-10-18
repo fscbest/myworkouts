@@ -18,11 +18,16 @@ export class WorkoutsPage {
       .subscribe(res => {
         console.log(res.artists.items);
       })*/
+    this.workouts;
   }
 
   ngOnInit(){
     this._workoutService.getWorkouts().subscribe(workouts => {
-      console.log(workouts);
+      this.workouts = workouts;
     });
+  }
+
+  workoutSelected(event, workout){
+    console.log(workout);
   }
 }
