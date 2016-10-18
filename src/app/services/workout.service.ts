@@ -7,7 +7,8 @@ import 'rxjs/Rx';
 export class WorkoutService{
   //private searchUrl: string;
   constructor(private _http:Http){
-
+    this.apiKey = '8RUMqLurVTX4OrwCi_BHwLPpTCZT-lhd';
+    this.workoutsUrl = 'https://api.mlab.com/api/1/databases/myworkoutsappb/collections/workouts';
   }
 
   //Just to test HTTP
@@ -16,4 +17,9 @@ export class WorkoutService{
     return this._http.get(this.searchUrl)
       .map(res=>res.json());
   }*/
+
+  getWorkouts(){
+    return this._http.get(this.workoutsUrl+"?apiKey="+this.apiKey)
+      .map(res=>res.json());
+  }
 }

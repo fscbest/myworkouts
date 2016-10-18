@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import {WorkoutService} from "../../app/services/workout.service";
@@ -20,4 +20,9 @@ export class WorkoutsPage {
       })*/
   }
 
+  ngOnInit(){
+    this._workoutService.getWorkouts().subscribe(workouts => {
+      console.log(workouts);
+    });
+  }
 }
