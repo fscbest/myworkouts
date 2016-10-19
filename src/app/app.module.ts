@@ -4,7 +4,11 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { WorkoutsPage } from '../pages/workouts/workouts';
 import { TabsPage } from '../pages/tabs/tabs';
-import {AddWorkoutPage} from "../pages/add-workout/add-workout";
+import { AddWorkoutPage } from "../pages/add-workout/add-workout";
+import { WorkoutDetailsPage } from "../pages/workout-details/workout-details";
+
+
+
 
 @NgModule({
   declarations: [
@@ -12,7 +16,8 @@ import {AddWorkoutPage} from "../pages/add-workout/add-workout";
     AboutPage,
     TabsPage,
     WorkoutsPage,
-    AddWorkoutPage
+    AddWorkoutPage,
+    WorkoutDetailsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,7 +28,8 @@ import {AddWorkoutPage} from "../pages/add-workout/add-workout";
     AboutPage,
     TabsPage,
     WorkoutsPage,
-    AddWorkoutPage
+    AddWorkoutPage,
+    WorkoutDetailsPage
   ],
   providers: []
 })

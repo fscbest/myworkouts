@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import {WorkoutService} from "../../app/services/workout.service";
+import {WorkoutDetailsPage} from "../workout-details/workout-details";
+
 
 @Component({
   selector: 'page-workouts',
@@ -9,7 +11,7 @@ import {WorkoutService} from "../../app/services/workout.service";
   providers: [WorkoutService]
 })
 export class WorkoutsPage {
-
+  workouts: any;
   constructor(public navCtrl: NavController,
               private _workoutService: WorkoutService) {
 
@@ -28,6 +30,6 @@ export class WorkoutsPage {
   }
 
   workoutSelected(event, workout){
-    console.log(workout);
+    this.navCtrl.push(WorkoutDetailsPage, {workout:workout});
   }
 }
