@@ -20,7 +20,11 @@ export class WorkoutsPage {
       .subscribe(res => {
         console.log(res.artists.items);
       })*/
-    this.workouts;
+
+    this._workoutService.getWorkouts().subscribe(workouts => {
+      this.workouts = workouts;
+      console.log("REFRESH");
+    });
   }
 
   ngOnInit(){
