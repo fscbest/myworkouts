@@ -16,7 +16,7 @@
       <hr>
       {{workout.note}}
       <br><br><br>
-      <button danger block>Delete Workout</button>
+      <button (click)="deleteWorkout(workout._id.$oid)" danger block>Delete Workout</button>
     </ion-card-header>
   </ion-card>
 </ion-content>
